@@ -1,0 +1,1 @@
+{"axes":[{"index_kind":"ordinary1d","indexed":true,"labels":[{"kind":"float64","value":"3fa47ae147ae147b"},{"kind":"float64","value":"3faeb851eb851eb8"}],"metadata":{"calendar":null,"crs":null,"location":null,"role":null,"time_encoding":null,"units":null},"name":"x","size":2}],"decoding_profile":"typed-manifest-v1","name":"temperature","schema_version":1,"semantic_blockers":[]}

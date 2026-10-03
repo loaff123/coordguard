@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "coordguard"
+version = "0.2.0"
+description = "Bounded offline coordinate-only join forecasts and independently verifiable numeric correspondence"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+authors = [{name = "CoordGuard contributors"}]
+dependencies = []
+
+[project.scripts]
+coordguard = "coordguard.cli:main"
+
+[tool.setuptools]
+packages = ["coordguard"]
+
+[project.optional-dependencies]
+netcdf = ["xarray==2025.10.1", "numpy==2.3.5", "pandas==2.2.3", "h5netcdf==1.6.3", "h5py==3.14.0"]
