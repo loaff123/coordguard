@@ -4,13 +4,15 @@
 
 CoordGuard is an offline, read-only coordinate audit. It extracts bounded coordinates and metadata from two selected NetCDF4 variables, predicts a binary xarray alignment, and writes complete JSON plus a standalone HTML summary. It never reads selected scientific payloads, changes data, converts units, guesses dimension renames, interpolates, reprojects, or certifies physical equivalence.
 
-This is an unpublished 0.2.0 candidate. Only the exact dependency stack below is supported; no version-range claim is made. The package name is not reserved on a registry.
+This 0.2.0 source snapshot is published on GitHub, not on PyPI. Only the exact dependency stack below is supported; no version-range claim is made. The package name is not reserved on a registry.
 
 ## Install from this source
 
 Python 3.11+; validated on Linux x86_64 with Python 3.12.14. Other platforms/Python versions are not yet validated.
 
 ```sh
+git clone https://github.com/loaff123/coordguard.git
+cd coordguard
 python3 -m venv .venv
 . .venv/bin/activate
 python -m pip install '.[netcdf]'
@@ -115,7 +117,7 @@ Standalone `verify` checks a mathematical proof and can exit 0 for valid ambigui
 
 ## Validation and provenance
 
-[Stage-two validation](docs/STAGE2_VALIDATION.md) records exact tests, independent checks, measured benchmarks, review fixes, remaining limits and distribution checks. [Stage-one validation](docs/VALIDATION.md) is historical evidence for the dependency-free mathematical core. CI definitions are included but have not been run on a remote repository. Nothing has been published.
+[Stage-two validation](docs/STAGE2_VALIDATION.md) records exact tests, independent checks, measured benchmarks, review fixes, remaining limits and distribution checks. [Stage-one validation](docs/VALIDATION.md) is historical evidence for the dependency-free mathematical core. The reviewed source passed both hosted CI jobs, including the dependency-free stress oracles and pinned NetCDF audit/replay ([run evidence](https://github.com/loaff123/coordguard/actions/runs/37096982583)). See [current CI runs](https://github.com/loaff123/coordguard/actions) for subsequent commits.
 
 This is operation-specific evidence, not a new matching algorithm. `xr.align(join="exact")` remains the simplest equality guard. [xarray alignment](https://docs.xarray.dev/en/v2025.10.1/generated/xarray.align.html), [automatic alignment](https://docs.xarray.dev/en/v2025.10.1/user-guide/computation.html#automatic-alignment), [nccmp](https://gitlab.com/remikz/nccmp), [cf-xarray](https://cf-xarray.readthedocs.io/), [xgcm](https://xgcm.readthedocs.io/), and [xESMF](https://xesmf.readthedocs.io/) cover adjacent or grid-aware tasks.
 
